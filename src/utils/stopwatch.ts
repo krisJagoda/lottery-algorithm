@@ -12,7 +12,7 @@ class Stopwatch {
     }
 
     getDuration(): number {
-        return this.start - this.end;
+        return this.end - this.start;
     }
 }
 export { Stopwatch };
