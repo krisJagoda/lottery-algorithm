@@ -1,0 +1,18 @@
+{
+  "name": "lottery-algorithm",
+  "version": "1.0.0",
+  "description": "An academic algorithm exercise using NodeJS, Typescript and a lot of creativity.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lottery",
+    "algorithm",
+    "js",
+    "typescript"
+  ],
+  "author": "Felipe Lautenschlager",
+  "license": "ISC"
+}
