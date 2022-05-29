@@ -4,6 +4,7 @@
   "description": "An academic algorithm exercise using NodeJS, Typescript and a lot of creativity.",
   "main": "index.js",
   "scripts": {
+    "start:dev": "nodemon",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +18,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^17.0.36",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.0",
     "typescript": "^4.7.2"
   }
 }
