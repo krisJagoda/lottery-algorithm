@@ -1,0 +1,5 @@
+interface DrawAlgorithm {
+
+    drawNumber(): number;
+    
+}
