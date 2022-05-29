@@ -5,8 +5,8 @@ console.log("* Initializing Lottery Application *");
 
 var log = '***** Lottery application log *****\n\n';
 
-const upperBoundary = 6000000;
-const numbersToDraw = 6000000;
+const upperBoundary = 60;
+const numbersToDraw = 6;
 
 log += 'Generating numbers from 0 to ' + upperBoundary + '\n';
 log += 'Numbers to draw: ' + numbersToDraw + '\n';
