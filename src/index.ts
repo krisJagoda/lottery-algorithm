@@ -1,17 +1,30 @@
 import { Lottery } from "./lottery-application";
+import { writeFile } from 'fs';
 
 console.log("* Initializing Lottery Application *");
 
-const upperBoundary = 60;
-const numbersToDraw = 6;
+var log = '***** Lottery application log *****\n\n';
+
+const upperBoundary = 6000000;
+const numbersToDraw = 6000000;
+
+log += 'Generating numbers from 0 to ' + upperBoundary + '\n';
+log += 'Numbers to draw: ' + numbersToDraw + '\n';
 
 const lottery = new Lottery(upperBoundary, numbersToDraw);
 
+console.log("** Running **");
+
 lottery.run();
 
-console.log("** Result **");
-console.log(lottery.getResults());
+log += '** Result **\n';
+log += lottery.getResults();
+log += '\n\n';
+log += '** Statistics **\n';
+log += lottery.getDurations();
+log += '\n\n';
+log += 'TOTAL DURATION: ' + lottery.totalDuration;
 
-console.log("** Duration **");
-console.log(lottery.getDurations());
-
+var timestamp = Date.now();
+var filename = './results/lottery-result' + timestamp + '.txt';
+writeFile(filename, log, () => console.log('Check result file ' + filename));
