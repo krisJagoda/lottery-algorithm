@@ -7,7 +7,7 @@ const numbersToDraw = 6;
 const timestamp = new Date().toISOString();
 const dir = './results';
 const lottery = new Lottery(upperBoundary, numbersToDraw);
-const fileName = `${dir}/lottery-results:${timestamp}.txt`;
+const fileName = `${dir}/lottery-results_${timestamp}.txt`;
 
 console.log("* Initializing Lottery Application *");
 
@@ -32,3 +32,4 @@ if (!fs.existsSync(dir)){
     fs.mkdirSync(dir);
 }
 writeFile(fileName, log, () => console.log('Check result file ' + fileName));
+

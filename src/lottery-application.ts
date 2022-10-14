@@ -4,7 +4,7 @@ import { TryAgainAlgorithm } from './algorithms/algorithm-v1';
 
 class Lottery {
 
-    private readonly numbers: number[];
+    private numbers: number[];
     private numbersToDraw: number;
     private algorithm: TryAgainAlgorithm;
     private results: number[];
