@@ -4,7 +4,6 @@ import {writeFile} from "fs";
 
 const upperBoundary = 60;
 const numbersToDraw = 6;
-const timestamp1 = new Date().toISOString();
 const lottery = new Lottery(upperBoundary, numbersToDraw);
 const dir = './results';
 
@@ -30,8 +29,8 @@ log += `TOTAL DURATION ${lottery.totalDuration} IN MILLISECONDS.`
 if (!fs.existsSync(dir)){
     fs.mkdirSync(dir);
 }
-
-const fileName = `${dir}/lottery-results_${timestamp1}.txt`;
+const timestamp = new Date().toISOString();
+const fileName = `${dir}/lottery-results_${timestamp}.txt`;
 writeFile(fileName, log, () => console.log('Check result file ' + fileName));
-ç
+
 
