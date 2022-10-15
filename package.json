@@ -7,12 +7,13 @@
     "start:dev": "nodemon",
     "start": "npm run build && node build/index.js",
     "build": "rimraf ./build && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "lottery",
     "algorithm",
     "js",
+    "ts",
     "typescript"
   ],
   "author": "Felipe Lautenschlager",
@@ -25,6 +26,11 @@
     "typescript": "^4.7.2"
   },
   "dependencies": {
-    "rxjs": "^7.5.5"
+    "@types/jest": "^29.1.2",
+    "@types/mocha": "^10.0.0",
+    "jest": "^29.2.0",
+    "mocha": "^10.0.0",
+    "rxjs": "^7.5.5",
+    "ts-jest": "^29.0.3"
   }
 }
