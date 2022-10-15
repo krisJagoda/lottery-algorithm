@@ -1,17 +1,18 @@
 import { Lottery } from "./lottery-application";
-import { writeFile } from 'fs';
-
-console.log("* Initializing Lottery Application *");
-
-var log = '***** Lottery application log *****\n\n';
+import * as fs from "fs";
+import {writeFile} from "fs";
 
 const upperBoundary = 60;
 const numbersToDraw = 6;
+const lottery = new Lottery(upperBoundary, numbersToDraw);
+const dir = './results';
+
+console.log("* Initializing Lottery Application *");
+
+let log = '***** Lottery application log *****\n\n';
 
 log += 'Generating numbers from 0 to ' + upperBoundary + '\n';
 log += 'Numbers to draw: ' + numbersToDraw + '\n';
-
-const lottery = new Lottery(upperBoundary, numbersToDraw);
 
 console.log("** Running **");
 
@@ -23,8 +24,13 @@ log += '\n\n';
 log += '** Statistics **\n';
 log += lottery.getDurations();
 log += '\n\n';
-log += 'TOTAL DURATION: ' + lottery.totalDuration;
+log += `TOTAL DURATION ${lottery.totalDuration} IN MILLISECONDS.`
 
-var timestamp = Date.now();
-var filename = './results/lottery-result' + timestamp + '.txt';
-writeFile(filename, log, () => console.log('Check result file ' + filename));
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
+const timestamp = new Date().toISOString();
+const fileName = `${dir}/lottery-results_${timestamp}.txt`;
+writeFile(fileName, log, () => console.log('Check result file ' + fileName));
+
+

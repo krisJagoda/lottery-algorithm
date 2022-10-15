@@ -1,23 +1,25 @@
+import {DrawAlgorithm} from "./interface";
+
 class TryAgainAlgorithm implements DrawAlgorithm {
 
     private numbers: number[];
-    private drawedNumbers: number[];
+    private drawnNumbers: number[];
 
     constructor(numbers:number[]) {
         this.numbers = numbers;
-        this.drawedNumbers = new Array();
+        this.drawnNumbers = [];
     }
 
     drawNumber(): number {
         // Draws a number from the original array
-        // Keep trying until it wasn't already drawed
-        var number: number;
+        // Keep trying until it wasn't already drawn
+        let number: number;
         do {
             number = this.numbers[this.getRandomIndex()];
-        } while (this.drawedNumbers.indexOf(number) != -1)
+        } while (this.drawnNumbers.indexOf(number) !== -1)
 
         // Stores the number and return
-        this.drawedNumbers.push(number);
+        this.drawnNumbers.push(number);
         return number;
     }
 

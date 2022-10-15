@@ -6,19 +6,19 @@ class Lottery {
 
     private numbers: number[];
     private numbersToDraw: number;
-    private algorithm: DrawAlgorithm;
+    private algorithm: TryAgainAlgorithm;
     private results: number[];
     private durations: number[];
     public totalDuration = 0;
 
     constructor(max: number, numbersToDraw: number) {
-        if (max < 1) { throw new Error("Max has cannot be 0"); }
-        if (numbersToDraw < 1) { throw new Error("NumbersToDraw cannot be 0"); }
-        if (numbersToDraw > max) { throw new Error("Numbers to draw cannot be bigger than max numbers in lottery"); }
+        if (max < 1) { throw new Error("Max cannot be 0 or a negative integer."); }
+        if (numbersToDraw < 1) { throw new Error("NumbersToDraw cannot be 0 or a negative integer."); }
+        if (numbersToDraw > max) { throw new Error("Numbers to draw cannot be bigger than max numbers in lottery."); }
 
-        this.durations = new Array();
-        this.numbers = new Array();
-        this.results = new Array();
+        this.durations = [];
+        this.numbers = [];
+        this.results = [];
         this.numbersToDraw = numbersToDraw;
 
         this.initializeNumbers(max);
@@ -31,15 +31,15 @@ class Lottery {
     }
 
     public run() {
-        var totalDurationStopWatch = new Stopwatch();
+        const totalDurationStopWatch = new Stopwatch();
         totalDurationStopWatch.startWatch();
-        var count = 0;
+        let count = 0;
 
         do {
-            var stopWatch = new Stopwatch();
+            const stopWatch = new Stopwatch();
             stopWatch.startWatch();
 
-            var result = this.algorithm.drawNumber();
+            const result = this.algorithm.drawNumber();
             this.results.push(result);
 
             stopWatch.stopWatch();
