@@ -1,4 +1,3 @@
-import {describe, expect} from '@jest/globals';
 import {Lottery} from "../../lottery-application";
 
 describe('Lottery constructor testing', () => {
