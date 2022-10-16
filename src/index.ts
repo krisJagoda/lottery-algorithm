@@ -2,8 +2,8 @@ import { Lottery } from "./lottery-application";
 import * as fs from "fs";
 import {writeFile} from "fs";
 
-const upperBoundary = 100_000;
-const numbersToDraw = 99_900;
+const upperBoundary = 200_000;
+const numbersToDraw = 199_900;
 const lottery = new Lottery(upperBoundary, numbersToDraw);
 const dir = './results';
 
