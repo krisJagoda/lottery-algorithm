@@ -1,11 +1,11 @@
 import { Lottery } from "./lottery-application";
-import * as fs from "fs";
-import {writeFile} from "fs";
+import {FileExplorer} from "./components/FileExplorer";
 
-const upperBoundary = 200_000;
-const numbersToDraw = 199_900;
+const upperBoundary = 2000;
+const numbersToDraw = 1999;
 const lottery = new Lottery(upperBoundary, numbersToDraw);
-const dir = './results';
+const fileCreator = new FileExplorer('lottery-algorithm');
+const filePrefix = fileCreator.createFileName();
 
 console.log("* Initializing Lottery Application *");
 
@@ -26,11 +26,9 @@ log += lottery.getDurations();
 log += '\n\n';
 log += `TOTAL DURATION ${lottery.totalDuration} IN MILLISECONDS.`
 
-if (!fs.existsSync(dir)){
-    fs.mkdirSync(dir);
-}
 const timestamp = new Date().toISOString();
-const fileName = `${dir}/lottery-results_${timestamp}.txt`;
-writeFile(fileName, log, () => console.log('Check result file ' + fileName));
+const file = `${filePrefix}${timestamp}.txt`;
+
+fileCreator.writeToFile(file, log);
 
 
