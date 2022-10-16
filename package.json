@@ -8,7 +8,7 @@
     "start": "npm run build && node build/index.js",
     "build": "rimraf ./build && tsc",
     "build:prod": "npm run test && rimraf ./build && tsc",
-    "test": "jest"
+    "test": "jest --collect-coverage"
   },
   "jest": {
     "transform": {
