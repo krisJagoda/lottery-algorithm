@@ -1,8 +1,8 @@
 import { Lottery } from "./lottery-application";
-import {FileExplorer} from "./components/FileExplorer";
+import {FileExplorer} from "./components/file-explorer";
 
-const upperBoundary = 2000;
-const numbersToDraw = 1999;
+const upperBoundary = 200_000;
+const numbersToDraw = 199_900;
 const lottery = new Lottery(upperBoundary, numbersToDraw);
 const fileCreator = new FileExplorer('lottery-algorithm');
 const filePrefix = fileCreator.createFileName();

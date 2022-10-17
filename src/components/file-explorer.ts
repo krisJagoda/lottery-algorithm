@@ -11,7 +11,7 @@ class FileExplorer {
         this.createDir(shallCreateDir);
     }
 
-    createDir = (input: boolean) => {
+    createDir = (input: boolean = true) => {
 
         if (!input && !fs.existsSync(this.dir)){
             throw new Error('The directory does not exist or has not been indicated to be created.');
@@ -29,6 +29,12 @@ class FileExplorer {
 
         return `${this.dir}/${this.fileName}_`;
     }
+
+    //create new method to set the data type
+    // setDataType = (data: string) => {
+    //     // set validations
+    //     // return `${}.{data}`;
+    // }
 
     writeToFile(file: string, log: string) {
         try {
