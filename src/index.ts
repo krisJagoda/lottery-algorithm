@@ -1,13 +1,15 @@
 import { Lottery } from "./lottery-application";
 import * as fs from "fs";
 import {writeFile} from "fs";
+import { MutatingSourceAlgorithm } from "./algorithms/algorithm-v2";
+import { TryAgainAlgorithm } from "./algorithms/algorithm-v1";
 
-const upperBoundary = 50_000;
-const numbersToDraw = 49_900;
+const upperBoundary = 100_000;
+const numbersToDraw = 100_000;
 
 const numbersPerLine = 50;
 
-const lottery = new Lottery(upperBoundary, numbersToDraw);
+const lottery = new Lottery(upperBoundary, numbersToDraw, new MutatingSourceAlgorithm());
 const dir = './results';
 
 console.log("* Initializing Lottery Application *");

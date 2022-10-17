@@ -1,17 +1,17 @@
 import { range } from 'rxjs';
 import { Stopwatch } from './utils/stopwatch';
-import { TryAgainAlgorithm } from './algorithms/algorithm-v1';
+import { DrawAlgorithm } from './algorithms/interface';
 
 class Lottery {
 
     private numbers: number[];
     private numbersToDraw: number;
-    private algorithm: TryAgainAlgorithm;
+    private algorithm: DrawAlgorithm;
     private results: number[];
     private durations: number[];
     public totalDuration = 0;
 
-    constructor(max: number, numbersToDraw: number) {
+    constructor(max: number, numbersToDraw: number, algorithm: DrawAlgorithm) {
         if (max < 1) { throw new Error("Max cannot be 0 or a negative integer."); }
         if (numbersToDraw < 1) { throw new Error("NumbersToDraw cannot be 0 or a negative integer."); }
         if (numbersToDraw > max) { throw new Error("Numbers to draw cannot be bigger than max numbers in lottery."); }
@@ -23,7 +23,8 @@ class Lottery {
 
         this.initializeNumbers(max);
 
-        this.algorithm = new TryAgainAlgorithm(this.numbers)
+        algorithm.init(this.numbers);
+        this.algorithm = algorithm;
     }
 
     initializeNumbers(max: number) {
