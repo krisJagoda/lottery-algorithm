@@ -1,3 +1,5 @@
+[![Node.js CI](https://github.com/felipelauten/lottery-algorithm/actions/workflows/node.js.yml/badge.svg)](https://github.com/felipelauten/lottery-algorithm/actions/workflows/node.js.yml)
+
 # lottery-algorithm
 An academic algorithm exercise using NodeJS, Typescript and a lot of creativity.
 
