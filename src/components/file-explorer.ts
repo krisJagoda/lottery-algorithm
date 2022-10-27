@@ -1,7 +1,10 @@
 import * as fs from "fs";
 import {writeFile} from "fs";
+import {IsDataType} from "./IsDataType";
 
-class FileExplorer {
+
+class FileExplorer implements IsDataType {
+
 
     private fileName: string;
     private dir = './results';
@@ -30,11 +33,16 @@ class FileExplorer {
         return `${this.dir}/${this.fileName}_`;
     }
 
-    //create new method to set the data type
-    // setDataType = (data: string) => {
-    //     // set validations
-    //     // return `${}.{data}`;
-    // }
+    isDataType(file: string, isDataType: string): string {
+        if (isDataType === 'txt'){
+            return `${file}.${isDataType}`;
+        }
+        else {
+            // depending on the isDataType argument passed, we need to decide which conversions we accept
+            // do we want to convert the txt to cvs? or other formats are allowed too? if so, which ones?
+        }
+        return '';
+    }
 
     writeToFile(file: string, log: string) {
         try {

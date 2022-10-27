@@ -27,8 +27,9 @@ log += '\n\n';
 log += `TOTAL DURATION ${lottery.totalDuration} IN MILLISECONDS.`
 
 const timestamp = new Date().toISOString();
-const file = `${filePrefix}${timestamp}.txt`;
-
+const fileName = `${filePrefix}${timestamp}`;
+const dataFormat = 'txt';
+const file = fileCreator.isDataType(fileName, dataFormat);
 fileCreator.writeToFile(file, log);
 
 
