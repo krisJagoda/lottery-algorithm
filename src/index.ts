@@ -4,8 +4,8 @@ import {writeFile} from "fs";
 import { MutatingSourceAlgorithm } from "./algorithms/algorithm-v2";
 import { TryAgainAlgorithm } from "./algorithms/algorithm-v1";
 
-const upperBoundary = 100_000;
-const numbersToDraw = 100_000;
+const upperBoundary = 1_000_000;
+const numbersToDraw = 999_000;
 
 const numbersPerLine = 50;
 
