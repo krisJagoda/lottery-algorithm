@@ -28,7 +28,7 @@ export class FileExplorer implements IsDataType {
     public createFileName = () => {
 
         if (this.fileName.trim().length === 0){
-            throw new Error('Text cannot be empty.');
+            throw new Error('File name cannot be empty. At least one character is expected.');
         }
 
         return `${this.dir}/${this.fileName}_`;
