@@ -1,4 +1,4 @@
-import {FileExplorer} from "../../components/file-explorer";
+import {FileExplorer} from "../../components/FileExplorer";
 import * as fs from "fs";
 import {exists} from "fs";
 

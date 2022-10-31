@@ -1,5 +1,6 @@
 import { Lottery } from "./lottery-application";
-import {FileExplorer} from "./components/file-explorer";
+import {FileExplorer} from "./components/FileExplorer";
+import {DataTypes} from "./components/DataTypes";
 
 const upperBoundary = 200_000;
 const numbersToDraw = 199_900;
@@ -28,8 +29,6 @@ log += `TOTAL DURATION ${lottery.totalDuration} IN MILLISECONDS.`
 
 const timestamp = new Date().toISOString();
 const fileName = `${filePrefix}${timestamp}`;
-const dataFormat = 'txt';
-const file = fileCreator.isDataType(fileName, dataFormat);
-fileCreator.writeToFile(file, log);
+fileCreator.writeToFile(fileName, DataTypes.TXT, log);
 
 

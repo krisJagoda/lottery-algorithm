@@ -1,20 +1,21 @@
 import * as fs from "fs";
 import {writeFile} from "fs";
 import {IsDataType} from "./IsDataType";
+import {DataTypes} from "./DataTypes";
 
 
-class FileExplorer implements IsDataType {
+export class FileExplorer implements IsDataType {
+    private dir : string = './results'
 
-
-    private fileName: string;
-    private dir = './results';
-
-    constructor(text: string, shallCreateDir: boolean = true) {
-        this.fileName = text;
+    constructor(
+        private fileName: string,
+        private shallCreateDir: boolean = true,
+    ) {
+        this.fileName = fileName;
         this.createDir(shallCreateDir);
     }
 
-    createDir = (input: boolean = true) => {
+    public createDir = (input: boolean = true) => {
 
         if (!input && !fs.existsSync(this.dir)){
             throw new Error('The directory does not exist or has not been indicated to be created.');
@@ -24,7 +25,7 @@ class FileExplorer implements IsDataType {
         }
     }
 
-    createFileName = () => {
+    public createFileName = () => {
 
         if (this.fileName.trim().length === 0){
             throw new Error('Text cannot be empty.');
@@ -33,18 +34,13 @@ class FileExplorer implements IsDataType {
         return `${this.dir}/${this.fileName}_`;
     }
 
-    isDataType(file: string, isDataType: string): string {
-        if (isDataType === 'txt'){
-            return `${file}.${isDataType}`;
-        }
-        else {
-            // depending on the isDataType argument passed, we need to decide which conversions we accept
-            // do we want to convert the txt to cvs? or other formats are allowed too? if so, which ones?
-        }
-        return '';
+    isDataType(file: string, isDataType: DataTypes): string {
+        return `${file}.${isDataType}`;
     }
 
-    writeToFile(file: string, log: string) {
+    public writeToFile(fileName: string, dataType: DataTypes = DataTypes.TXT, log: string) {
+        const file = this.isDataType(fileName, dataType);
+
         try {
             writeFile(file, log, () => console.log('Check result file ' + file));
         } catch (e) {
@@ -53,4 +49,3 @@ class FileExplorer implements IsDataType {
     }
 }
 
-export {FileExplorer};

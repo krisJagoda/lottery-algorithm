@@ -1,6 +1,6 @@
 import {DrawAlgorithm} from "./interface";
 
-class TryAgainAlgorithm implements DrawAlgorithm {
+export class TryAgainAlgorithm implements DrawAlgorithm {
 
     private numbers: number[];
     private drawnNumbers: number[];
@@ -27,4 +27,3 @@ class TryAgainAlgorithm implements DrawAlgorithm {
         return Math.floor(Math.random() * this.numbers.length);
     }
 }
-export { TryAgainAlgorithm };
