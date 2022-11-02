@@ -1,4 +1,4 @@
-class Stopwatch {
+class StopWatch {
 
     private start: number = 0;
     private end: number = 0;
@@ -16,4 +16,4 @@ class Stopwatch {
     }
 }
 
-export {Stopwatch};
+export {StopWatch};

@@ -1,5 +1,5 @@
 import { range } from 'rxjs';
-import { Stopwatch } from './utils/stopwatch';
+import { StopWatch } from './utils/StopWatch';
 import { TryAgainAlgorithm } from './algorithms/algorithm-v1';
 
 class Lottery {
@@ -31,12 +31,12 @@ class Lottery {
     }
 
     public run() {
-        const totalDurationStopWatch = new Stopwatch();
+        const totalDurationStopWatch = new StopWatch();
         totalDurationStopWatch.startWatch();
         let count = 0;
 
         do {
-            const stopWatch = new Stopwatch();
+            const stopWatch = new StopWatch();
             stopWatch.startWatch();
 
             const result = this.algorithm.drawNumber();
