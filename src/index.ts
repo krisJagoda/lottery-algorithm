@@ -1,13 +1,15 @@
 import { Lottery } from "./lottery-application";
 import * as fs from "fs";
 import {writeFile} from "fs";
-
-const upperBoundary = 200_000;
-const numbersToDraw = 199_900;
-const lottery = new Lottery(upperBoundary, numbersToDraw);
-const dir = './results';
+import {UserInput} from "./utils/user-input";
 
 console.log("* Initializing Lottery Application *");
+const userInput = new UserInput();
+userInput.run();
+const upperBoundary = userInput.setUpperBoundary();
+const numbersToDraw = userInput.setNumbersToDraw();
+const lottery = new Lottery(upperBoundary, numbersToDraw);
+const dir = './results';
 
 let log = '***** Lottery application log *****\n\n';
 
@@ -32,5 +34,6 @@ if (!fs.existsSync(dir)){
 const timestamp = new Date().toISOString();
 const fileName = `${dir}/lottery-results_${timestamp}.txt`;
 writeFile(fileName, log, () => console.log('Check result file ' + fileName));
+
 
 
