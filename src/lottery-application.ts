@@ -15,7 +15,6 @@ class Lottery {
         if (max < 1) { throw new Error("Max cannot be 0 or a negative integer."); }
         if (numbersToDraw < 1) { throw new Error("NumbersToDraw cannot be 0 or a negative integer."); }
         if (numbersToDraw > max) { throw new Error("Numbers to draw cannot be bigger than max numbers in lottery."); }
-
         this.durations = [];
         this.numbers = [];
         this.results = [];

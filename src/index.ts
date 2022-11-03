@@ -1,4 +1,4 @@
-import { Lottery } from "./lottery-application";
+import {Lottery} from "./lottery-application";
 import * as fs from "fs";
 import {writeFile} from "fs";
 import {UserInput} from "./utils/user-input";
@@ -28,7 +28,7 @@ log += lottery.getDurations();
 log += '\n\n';
 log += `TOTAL DURATION ${lottery.totalDuration} IN MILLISECONDS.`
 
-if (!fs.existsSync(dir)){
+if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
 }
 const timestamp = new Date().toISOString();
