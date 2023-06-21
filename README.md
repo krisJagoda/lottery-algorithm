@@ -22,7 +22,3 @@ For more information, follow me on:
 
 [LinkedIn](https://linkedin.com/in/felipelauten)
 
-## Important note
-This repository is now archived. You won't be able to open issues, create pull requests or merge code into its branches.
-If you still want to work on this code, fork the repo.
-I won't be supporting any effort in this repo, no reviews or mentorship.
