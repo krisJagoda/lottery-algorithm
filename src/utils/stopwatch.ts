@@ -1,19 +1,28 @@
 class Stopwatch {
 
-    private start: number = 0;
-    private end: number = 0;
+    private _start: number = 0;
+    private _end: number = 0;
 
     startWatch() {
-        this.start = new Date().getMilliseconds();
+        this._start = Date.now();
     }
 
     stopWatch() {
-        this.end = new Date().getMilliseconds();
+        this._end = Date.now();
     }
 
     getDuration(): number {
-        return this.end - this.start;
+        return this._end - this._start;
     }
+
+    get start(): number {
+        return this._start;
+    }
+
+    get end(): number {
+        return this._end;
+    }
+
 }
 
 export {Stopwatch};

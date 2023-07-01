@@ -24,7 +24,7 @@ log += '\n\n';
 log += '** Statistics **\n';
 log += lottery.getDurations();
 log += '\n\n';
-log += `TOTAL DURATION ${lottery.totalDuration} IN MILLISECONDS.`
+log += `TOTAL DURATION IS ${lottery.totalDuration} IN MILLISECONDS.`
 
 if (!fs.existsSync(dir)){
     fs.mkdirSync(dir);

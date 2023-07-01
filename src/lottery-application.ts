@@ -33,6 +33,7 @@ class Lottery {
     public run() {
         const totalDurationStopWatch = new Stopwatch();
         totalDurationStopWatch.startWatch();
+        const totalDurationStartCount = totalDurationStopWatch.start;
         let count = 0;
 
         do {
@@ -47,7 +48,8 @@ class Lottery {
             count++;
         } while (count < this.numbersToDraw);
         totalDurationStopWatch.stopWatch();
-        this.totalDuration = totalDurationStopWatch.getDuration();
+        const totalDurationEndCount = totalDurationStopWatch.end;
+        this.totalDuration = totalDurationEndCount - totalDurationStartCount;
     }
 
     getDurations():number[] {
