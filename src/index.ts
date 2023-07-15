@@ -5,7 +5,7 @@ import { MutatingSourceAlgorithm } from "./algorithms/algorithm-v2";
 import { TryAgainAlgorithm } from "./algorithms/algorithm-v1";
 
 const upperBoundary = 1_000_000;
-const numbersToDraw = 999_000;
+const numbersToDraw = 250_000;
 
 const numbersPerLine = 50;
 

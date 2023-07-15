@@ -48,7 +48,7 @@ class Lottery {
             count++;
         } while (count < this.numbersToDraw);
         totalDurationStopWatch.stopWatch();
-        this.totalDuration = totalDurationStopWatch.getDuration();
+        this.totalDuration = totalDurationStopWatch.getDurationWithTrace();
     }
 
     getDurations():number[] {
