@@ -1,12 +1,11 @@
 import {DrawAlgorithm} from "./interface";
 
-class TryAgainAlgorithm implements DrawAlgorithm {
+class TryAgainAlgorithm extends DrawAlgorithm {
 
-    private numbers: number[];
     private drawnNumbers: number[];
 
-    constructor(numbers:number[]) {
-        this.numbers = numbers;
+    constructor() {
+        super();
         this.drawnNumbers = [];
     }
 
